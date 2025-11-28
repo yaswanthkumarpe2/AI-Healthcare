@@ -1,0 +1,48 @@
+<!doctype html>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="diagnose.html">Symptom Checker</a>
+        <a href="image-detect.html">Image-based Check</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Symptom-based Disease Identifier</h2>
+    <p>Select symptoms below and click <strong>Diagnose</strong>.</p>
+
+    <form id="symptom-form" class="card">
+      <div class="checkbox-grid">
+        <label><input type="checkbox" name="symptom" value="fever"> Fever</label>
+        <label><input type="checkbox" name="symptom" value="cough"> Cough</label>
+        <label><input type="checkbox" name="symptom" value="fatigue"> Fatigue</label>
+        <label><input type="checkbox" name="symptom" value="headache"> Headache</label>
+        <label><input type="checkbox" name="symptom" value="rash"> Skin rash</label>
+        <label><input type="checkbox" name="symptom" value="nausea"> Nausea / Vomiting</label>
+        <label><input type="checkbox" name="symptom" value="breath"> Shortness of breath</label>
+        <label><input type="checkbox" name="symptom" value="joint"> Joint pain</label>
+        <label><input type="checkbox" name="symptom" value="sorethroat"> Sore throat</label>
+        <label><input type="checkbox" name="symptom" value="diarrhea"> Diarrhea</label>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="diagnose-btn" class="btn">Diagnose</button>
+        <button type="button" id="clear-btn" class="btn outline">Clear</button>
+      </div>
+
+      <div id="result" class="result" aria-live="polite"></div>
+    </form>
+
+    <section class="explain">
+      <h3>How it works</h3>
+      <p>The demo uses a simple rule-based engine that maps common symptom clusters to likely disease categories (e.g., flu-like, gastrointestinal, allergic, respiratory). This is for educational purposes only — not medical advice.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Demo — not a substitute for professional medical diagnosis</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
