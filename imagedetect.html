@@ -1,4 +1,15 @@
 <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image-based Check — AI Healthcare</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1><a href="index.html">AI Healthcare</a></h1>
       <nav>
         <a href="index.html">Home</a>
         <a href="diagnose.html">Symptom Checker</a>
@@ -8,39 +19,29 @@
   </header>
 
   <main class="container">
-    <h2>Symptom-based Disease Identifier</h2>
-    <p>Select symptoms below and click <strong>Diagnose</strong>.</p>
+    <h2>Upload an image (skin lesion / X-ray placeholder)</h2>
+    <p>This is a front-end placeholder for image analysis. To enable real inference, integrate a TensorFlow.js model or call your ML inference API from the `analyzeImage` function in <code>script.js</code>.</p>
 
-    <form id="symptom-form" class="card">
-      <div class="checkbox-grid">
-        <label><input type="checkbox" name="symptom" value="fever"> Fever</label>
-        <label><input type="checkbox" name="symptom" value="cough"> Cough</label>
-        <label><input type="checkbox" name="symptom" value="fatigue"> Fatigue</label>
-        <label><input type="checkbox" name="symptom" value="headache"> Headache</label>
-        <label><input type="checkbox" name="symptom" value="rash"> Skin rash</label>
-        <label><input type="checkbox" name="symptom" value="nausea"> Nausea / Vomiting</label>
-        <label><input type="checkbox" name="symptom" value="breath"> Shortness of breath</label>
-        <label><input type="checkbox" name="symptom" value="joint"> Joint pain</label>
-        <label><input type="checkbox" name="symptom" value="sorethroat"> Sore throat</label>
-        <label><input type="checkbox" name="symptom" value="diarrhea"> Diarrhea</label>
-      </div>
-
+    <div class="card">
+      <input type="file" id="image-input" accept="image/*">
+      <div id="preview" class="img-preview">No image selected</div>
       <div class="form-actions">
-        <button type="button" id="diagnose-btn" class="btn">Diagnose</button>
-        <button type="button" id="clear-btn" class="btn outline">Clear</button>
+        <button id="analyze-btn" class="btn">Analyze (Placeholder)</button>
       </div>
-
-      <div id="result" class="result" aria-live="polite"></div>
-    </form>
+      <div id="image-result" class="result" aria-live="polite"></div>
+    </div>
 
     <section class="explain">
-      <h3>How it works</h3>
-      <p>The demo uses a simple rule-based engine that maps common symptom clusters to likely disease categories (e.g., flu-like, gastrointestinal, allergic, respiratory). This is for educational purposes only — not medical advice.</p>
+      <h3>Integrations</h3>
+      <ul>
+        <li>Client-side: use TensorFlow.js models (mobilenet / custom) for on-device inference.</li>
+        <li>Server-side: upload image to your server and run a model (Flask/Node + PyTorch/TensorFlow).</li>
+      </ul>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">Demo — not a substitute for professional medical diagnosis</div>
+    <div class="container">Image demo — ensure HIPAA & privacy compliance for real apps</div>
   </footer>
 
   <script src="script.js"></script>
